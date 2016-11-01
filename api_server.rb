@@ -14,6 +14,11 @@ class APIServer < Sinatra::Base
     response.to_json
   end
 
+  post '/' do
+    response = @response_generator.response_message
+    response.to_json
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
